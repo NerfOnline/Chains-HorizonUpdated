@@ -1,3 +1,9 @@
+#  The only changes in this fork are for the Chains addon
+
+- Chains - Updated all the skillchain properties to the Horizon server. This includes all of the following changes to pets:
+  -  Corrected the SMN Blood Pact values.
+  -  Disabled BST/SMN pet abilities that you can't skillchain.  
+
 # Ashita-v4-addons
 Custom or converted addons for FFXI Ashita v4. All addons have only been tested on retail. 
 
