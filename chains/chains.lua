@@ -20,8 +20,8 @@
 --]]
 
 addon.name     = 'chains';
-addon.author   = 'Sippius - Original Ashita-v3 skillchains by Ivaar';
-addon.version  = '0.8';
+addon.author   = 'Sippius, Ivaar, and NerfOnline';
+addon.version  = '0.81';
 addon.desc     = 'Display current skillchain options.';
 
 require('common');
