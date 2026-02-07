@@ -1,15 +1,30 @@
-#  The only changes in this fork are for the Chains addon
+# Chains - Horizon Updated
 
-- Chains - Updated all the skillchain properties to the Horizon server. This includes all of the following changes to pets:
-  -  Corrected the SMN Blood Pact values.
-  -  Disabled BST/SMN pet abilities that you can't skillchain.  
+- Updated all the skillchain properties to the Horizon server. This includes all of the following changes to pets:
+- Corrected the SMN Blood Pact values.
+- Disabled BST/SMN pet abilities that you can't skillchain.  
 
-# Ashita-v4-addons
-Custom or converted addons for FFXI Ashita v4. All addons have only been tested on retail. 
+### Active Battle Skillchain Display.
 
-- find - Ashita v3 find by MalRD & zombie343 ported to Ashita v4.
-- pupsets - Ashita v4 blusets by atom0s modified to support PUP. Ashita v3 pupsets by DivByZero used for additional reference.
-  - Attachment files should contain one entry per line starting with head then body then desired attachments
-- RollTracker - Ashita v3 RollTracker by Daniel_H ported to Ashita v4.
-- chains - A refreshed version of Ashita v3 skillchains by Ivaar. See the chains README.md for additional information.
-  - Pet skill IDs and skillchain properties require modification for private servers.
+Displays a text object containing skillchain elements resonating on current target, timer for skillchain window and a list of weapon skills that can skillchain based on the weapon you have currently equipped.
+
+Chains is based on the skillchains addon by Ivaar for Ashita-v3. It has mostly been recoded for Ashita-v4 while maintaining the same functionality.
+
+### Commands
+The following commands may be used to adjust the window position.
+
+    /chains visible       -- displays text box - click and drag it to desired location
+    /chains move <x> <y>  -- reposition the window to the defined x, y coordinates
+    /chains scale <value> -- set font scale
+
+The following commands toggle the display information.
+
+    /chains color   -- colorize properties and elements
+    /chains pet     -- smn
+    /chains weapon  -- weapon skills
+
+### Acknowledgments
+All credit goes to Ivaar for the original skillchains implementation which was used as the tempalte for how to accomplish the desired results and how to deal with some of the corner cases.
+
+Special thanks to Atom0s and Thorny. Many of their addons are used as examples of how to accomplish various tasks.
+
