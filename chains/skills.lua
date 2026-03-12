@@ -28,7 +28,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 local skills = {};
 
-skills[3] = { -- Weaponskills
+-- Weaponskills
+skills[3] = {
 --Hand-to-Hand
     [1] = {en='Combo',skillchain={'Impaction'}},
     [2] = {en='Shoulder Tackle',skillchain={'Reverberation','Impaction'}},
@@ -101,7 +102,7 @@ skills[3] = { -- Weaponskills
     [98] = {en='Shadow of Death',skillchain={'Induration','Reverberation'}},
     [99] = {en='Nightmare Scythe',skillchain={'Compression','Scission'}},
     [100] = {en='Spinning Scythe',skillchain={'Reverberation','Scission'}},
-    [101] = {en='Vorpal Scythe',skillchain={'Scission','Transfixion'}},
+    [101] = {en='Vorpal Scythe',skillchain={'Transfixion','Scission'}},
     [102] = {en='Guillotine',skillchain={'Induration'}},
     [103] = {en='Cross Reaper',skillchain={'Distortion'}},
     [104] = {en='Spiral Hell',skillchain={'Gravitation','Compression'}},
@@ -113,7 +114,7 @@ skills[3] = { -- Weaponskills
     [115] = {en='Leg Sweep',skillchain={'Impaction'}},
     [116] = {en='Penta Thrust',skillchain={'Compression'}},
     [117] = {en='Vorpal Thrust',skillchain={'Reverberation','Transfixion'}},
-    [118] = {en='Skewer',skillchain={'Transfixion','Induration'}},
+    [118] = {en='Skewer',skillchain={'Transfixion','Impaction'}},
     [119] = {en='Wheeling Thrust',skillchain={'Fusion'}},
     [120] = {en='Impulse Drive',skillchain={'Gravitation','Induration'}},
     [121] = {en='Geirskogul',skillchain={'Light','Distortion'}},
@@ -122,7 +123,7 @@ skills[3] = { -- Weaponskills
     [129] = {en='Blade: Retsu',skillchain={'Scission'}},
     [130] = {en='Blade: Teki',skillchain={'Reverberation'}},
     [131] = {en='Blade: To',skillchain={'Induration','Detonation'}},
-    [132] = {en='Blade: Chi',skillchain={'Impaction','Transfixion'}},
+    [132] = {en='Blade: Chi',skillchain={'Transfixion','Impaction'}},
     [133] = {en='Blade: Ei',skillchain={'Compression'}},
     [134] = {en='Blade: Jin',skillchain={'Detonation','Impaction'}},
     [135] = {en='Blade: Ten',skillchain={'Gravitation'}},
@@ -135,7 +136,7 @@ skills[3] = { -- Weaponskills
     [147] = {en='Tachi: Kagero',skillchain={'Liquefaction'}},
     [148] = {en='Tachi: Jinpu',skillchain={'Scission','Detonation'}},
     [149] = {en='Tachi: Koki',skillchain={'Reverberation','Impaction'}},
-    [150] = {en='Tachi: Yukikaze',skillchain={'Detonation','Induration'}},
+    [150] = {en='Tachi: Yukikaze',skillchain={'Induration','Detonation'}},
     [151] = {en='Tachi: Gekko',skillchain={'Distortion','Reverberation'}},
     [152] = {en='Tachi: Kasha',skillchain={'Fusion','Compression'}},
     [153] = {en='Tachi: Kaiten',skillchain={'Light','Fragmentation'}},
@@ -171,9 +172,9 @@ skills[3] = { -- Weaponskills
 --Marksmanship
     [208] = {en='Hot Shot',skillchain={'Liquefaction','Transfixion'}},
     [209] = {en='Split Shot',skillchain={'Reverberation','Transfixion'}},
-    [210] = {en='Sniper Shot',skillchain={'Transfixion','Liquefaction'}},
+    [210] = {en='Sniper Shot',skillchain={'Liquefaction','Transfixion'}},
     [212] = {en='Slug Shot',skillchain={'Reverberation','Transfixion','Detonation'}},
-    [213] = {en='Blast Shot',skillchain={'Transfixion','Induration'}},
+    [213] = {en='Blast Shot',skillchain={'Induration','Transfixion'}},
     [214] = {en='Heavy Shot',skillchain={'Fusion'}},
     [215] = {en='Detonator',skillchain={'Fusion','Transfixion'}},
     [216] = {en='Coronach',skillchain={'Darkness','Fragmentation'}},
@@ -181,7 +182,7 @@ skills[3] = { -- Weaponskills
 
 -- Pet skills as triggered by player.
 -- Separated from skills as triggered by pet to ease support for private servers
-skills.playerPet = { -- BST/SMN Player Pet Skills
+skills.playerPet = {
     [513] = {en='Poison Nails',skillchain={'Transfixion'}},
     [528] = {en='Moonlit Charge',skillchain={'Compression'}},
     [529] = {en='Crescent Fang',skillchain={'Transfixion'}},
@@ -200,29 +201,28 @@ skills.playerPet = { -- BST/SMN Player Pet Skills
 };
 
 -- *** Modify key IDs as needed for private server ***
--- Pet skills as triggered by pet
--- Separated from skills as triggered by player to ease support for private servers
 -- ASB ID values - https://github.com/AirSkyBoat/AirSkyBoat/blob/staging/sql/mob_skills.sql
 -- LSB ID values - https://github.com/LandSandBoat/server/blob/base/sql/mob_skills.sql
-skills[13] = { -- BST/SMN Pet Skills
-    [907] = skills.playerPet[513], -- ASB:  907 -- {en='Poison Nails',skillchain={'Transfixion'}},
-    [831] = skills.playerPet[528], -- ASB:  831 -- {en='Moonlit Charge',skillchain={'Compression'}},
-    [832] = skills.playerPet[529], -- ASB:  832 -- {en='Crescent Fang',skillchain={'Transfixion'}},
-    [840] = skills.playerPet[544], -- ASB:  840 -- {en='Punch',skillchain={'Liquefaction'}},
-    [842] = skills.playerPet[546], -- ASB:  842 -- {en='Burning Strike',skillchain={'Impaction'}},
-    [843] = skills.playerPet[547], -- ASB:  843 -- {en='Double Punch',skillchain={'Compression'}},
-    [849] = skills.playerPet[560], -- ASB:  849 -- {en='Rock Throw',skillchain={'Scission'}},
-    [851] = skills.playerPet[562], -- ASB:  851 -- {en='Rock Buster',skillchain={'Reverberation'}},
-    [852] = skills.playerPet[563], -- ASB:  852 -- {en='Megalith Throw',skillchain={'Induration'}},
-    [858] = skills.playerPet[576], -- ASB:  858 -- {en='Barracuda Dive',skillchain={'Reverberation'}},
-    [860] = skills.playerPet[578], -- ASB:  860 -- {en='Tail Whip',skillchain={'Detonation'}},
-    [867] = skills.playerPet[592], -- ASB:  867 -- {en='Claw',skillchain={'Detonation'}},
-    [876] = skills.playerPet[608], -- ASB:  876 -- {en='Axe Kick',skillchain={'Induration'}},
-    [880] = skills.playerPet[612], -- ASB:  880 -- {en='Double Slap',skillchain={'Scission'}},
-    [885] = skills.playerPet[624], -- ASB:  885 -- {en='Shock Strike',skillchain={'Impaction'}},
+skills[13] = {
+    [513] = skills.playerPet[513], -- Poison Nails
+    [528] = skills.playerPet[528], -- Moonlit Charge
+    [529] = skills.playerPet[529], -- Crescent Fang
+    [544] = skills.playerPet[544], -- Punch
+    [546] = skills.playerPet[546], -- Burning Strike
+    [547] = skills.playerPet[547], -- Double Punch
+    [560] = skills.playerPet[560], -- Rock Throw
+    [562] = skills.playerPet[562], -- Rock Buster
+    [563] = skills.playerPet[563], -- Megalith Throw
+    [576] = skills.playerPet[576], -- Barracuda Dive
+    [578] = skills.playerPet[578], -- Tail Whip
+    [592] = skills.playerPet[592], -- Claw
+    [608] = skills.playerPet[608], -- Axe Kick
+    [612] = skills.playerPet[612], -- Double Slap
+    [624] = skills.playerPet[624], -- Shock Strike
 };
 
-skills[11] = { -- NPC TP skills
+-- NPC TP skills
+skills[11] = {
     [829] = {en='Great Wheel',skillchain={'Fragmentation','Scission'}},
     [830] = {en='Light Blade',skillchain={'Light','Fusion'}},
     [838] = {en='Howling Moon',skillchain={'Darkness','Distortion'}},
