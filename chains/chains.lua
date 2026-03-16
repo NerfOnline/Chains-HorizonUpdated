@@ -33,6 +33,24 @@ local settings = require('settings');
 local skills = require('skills');
 
 --=============================================================================
+-- Font scaling compatibility for Ashita 4.3 and 4.16+
+-- 4.16+ provides SetWindowFontScale; 4.3 uses PushFont/PopFont
+--=============================================================================
+local function ApplyFontScale(scale)
+    if imgui.SetWindowFontScale then
+        imgui.SetWindowFontScale(scale)
+    else
+        imgui.PushFont(imgui.GetFont(), imgui.GetFontSize() * scale)
+    end
+end
+
+local function UnapplyFontScale()
+    if not imgui.SetWindowFontScale then
+        imgui.PopFont()
+    end
+end
+
+--=============================================================================
 -- Addon Variables
 --=============================================================================
 local default_settings = T{
@@ -990,7 +1008,7 @@ ashita.events.register('d3d_present', 'present_cb', function ()
         if (imgui.Begin('chains', true, flags)) then
 
             if render then
-                imgui.SetWindowFontScale(chains.settings.font_scale)
+                ApplyFontScale(chains.settings.font_scale)
 
                 local timediff = now-targetTable[targetId].ts;
                 local timer = targetTable[targetId].dur-timediff;
@@ -1055,12 +1073,14 @@ ashita.events.register('d3d_present', 'present_cb', function ()
                         imgui.TextColored(GetPropertyColor(v.outProp), v.outProp);
                     end
                 end
+                UnapplyFontScale()
             elseif chains.visible then
-                imgui.SetWindowFontScale(chains.settings.font_scale)
+                ApplyFontScale(chains.settings.font_scale)
                 imgui.Text('');
                 imgui.Text('                 --- Chains ---                 ');
                 imgui.Text('         Click and drag to move display         ');
                 imgui.Text('');
+                UnapplyFontScale()
             end
 
             if chains.position then
