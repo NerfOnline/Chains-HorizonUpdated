@@ -114,7 +114,7 @@ skills[3] = {
     [115] = {en='Leg Sweep',skillchain={'Impaction'}},
     [116] = {en='Penta Thrust',skillchain={'Compression'}},
     [117] = {en='Vorpal Thrust',skillchain={'Reverberation','Transfixion'}},
-    [118] = {en='Skewer',skillchain={'Transfixion','Impaction'}},
+    [118] = {en='Skewer',skillchain={'Transfixion','Induration'}},
     [119] = {en='Wheeling Thrust',skillchain={'Fusion'}},
     [120] = {en='Impulse Drive',skillchain={'Gravitation','Induration'}},
     [121] = {en='Geirskogul',skillchain={'Light','Distortion'}},

@@ -855,7 +855,10 @@ ashita.events.register('packet_in', 'packet_in_cb', function (e)
         -- Check for valid actor skill with valid message - generic first step (excluding chainbound)
         -- Include spells when SCH Immanence or BLU Azure Lore / Chain Affinity is active
         -- Immanence and Chain Affinity buff status cleared on use
-        elseif actionSkill and MessageTypes:contains(targetAction.Message) and (actionPacket.Type ~= 4 or (playerTable[actor])) then
+        -- Only allow alliance players (includes Trusts) and SMN pets (Type 13); blocks BST pets (Type 11)
+        elseif actionSkill and MessageTypes:contains(targetAction.Message)
+            and (isPlayerInAlliance(actor) or actionPacket.Type == 13)
+            and (actionPacket.Type ~= 4 or (playerTable[actor])) then
             local delay = actionSkill and actionSkill.delay or 3
             targetTable[target.Id] = {
                 en=actionSkill.en,
